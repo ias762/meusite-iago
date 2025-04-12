@@ -16,7 +16,7 @@ document.getElementById("form-contato").addEventListener("submit", function(even
     const button = this.querySelector("button");
     button.disabled = true;
   
-    // Simulando um envio de formulário (pode ser adaptado para backend)
+    // Simulando um envio de formulário (em breve sera adaptado para backend)
     setTimeout(() => {
       alert("Mensagem enviada com sucesso! Em breve entrarei em contato. 😊");
       this.reset();  // Limpa os campos após o envio
