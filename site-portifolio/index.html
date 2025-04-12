@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Iago</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Olá, eu sou o Iago</h1>
+    <p>Desenvolvedor em aprendizado e entusiasta da tecnologia!</p>
+  </header>
+
+  <section class="sobre">
+    <h2>Sobre mim</h2>
+    <p>Aprendiz em programação.</p>
+    <p>Bacharel em Serviço Social pela faculdade IRSA.</p>
+    <p>Discente em Sistemas de Informação pela UFPI.</p>
+    <p>Trabalho com Redes e Computadores.</p>
+  </section>
+
+  <section class="projetos">
+    <h2>Projetos</h2>
+    <ul>
+      <li><i class="fas fa-tools"></i> Manutenção avançada de Desktops e Notebooks.</li>
+      <li><i class="fas fa-network-wired"></i> Projeto de rede em escritórios ou casas.</li>
+      <li><i class="fas fa-mobile-alt"></i> Apps de consultas online</li>
+      <li><i class="fas fa-database"></i> Banco de dados (SQL)</li>
+    </ul>
+  </section>
+  
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <p>Preencha os campos para deixar seu nome e contato caso queira agendar uma manutenção.</p>
+    <form id="form-contato">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" placeholder="Seu nome" required />
+      
+      <label for="email">E-mail</label>
+      <input id="email" type="email" placeholder="Seu e-mail" required />
+      
+      <label for="problema">Problema</label>
+      <textarea id="problema" placeholder="Descreva o problema" required></textarea>
+      
+      <label for="equipamento">Tipo de equipamento</label>
+      <select id="equipamento" required>
+        <option value="" disabled selected>Tipo de equipamento</option>
+        <option value="notebook">Notebook</option>
+        <option value="desktop">Desktop</option>
+      </select>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Iago Antão. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
