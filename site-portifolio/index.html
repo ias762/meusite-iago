@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Iago</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Olá, Seja bem-vindo(a)!</h1>
+  </header>
+
+  <section class="sobre">
+    <h2>Sobre mim</h2>
+    <p>Me chamo Iago Antão, sou desenvolvedor em aprendizado e entusiasta da tecnologia. Bacharel em Serviço Social pela faculdade IRSA,      Discente em Sistemas de Informação pela UFPI, trabalho com manutenções de computadores e faço projetos de rede.</p>
+  </section>
+
+  <section class="projetos">
+    <h2>Projetos</h2>
+    <ul>
+      <li><i class="fas fa-tools"></i> Manutenção avançada de Desktops e Notebooks.</li>
+      <li><i class="fas fa-network-wired"></i> Projeto de rede em escritórios ou casas.</li>
+      <li><i class="fas fa-mobile-alt"></i> Apps de consultas online</li>
+      <li><i class="fas fa-database"></i> Banco de dados (SQL)</li>
+    </ul>
+  </section>
+  
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <p>Preencha os campos para deixar seu nome e contato caso queira agendar uma manutenção.</p>
+    <form id="contato" action="https://formspree.io/f/mdkebyba" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <input type="text" contato="contato" placeholder="Telefone de contato" required />
+      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    
+    <div id="mensagem-sucesso" style="display:none; color: green; margin-top: 10px;">
+      Mensagem enviada com sucesso!
+    </div>
+    
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Iago Antão. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('contato');
+    const sucesso = document.getElementById('mensagem-sucesso');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      if (response.ok) {
+        form.reset();
+        sucesso.style.display = 'block';
+      } else {
+        alert('Erro ao enviar. Tente novamente.');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
