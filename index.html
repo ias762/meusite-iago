@@ -8,53 +8,79 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Olá, Seja bem-vindo(a)!</h1>
   </header>
 
-  <section class="sobre">
+  <section id="sobre" class="sobre">
     <h2>Sobre mim</h2>
-    <p>Me chamo Iago Antão, sou desenvolvedor em aprendizado e entusiasta da tecnologia. Bacharel em Serviço Social pela faculdade IRSA,      Discente em Sistemas de Informação pela UFPI, trabalho com manutenções de computadores e faço projetos de rede.</p>
+    <p>Me chamo Iago Antão, sou desenvolvedor em aprendizado e entusiasta da tecnologia. Bacharel em Serviço Social pela faculdade IRSA, Discente em Sistemas de Informação pela UFPI, trabalho com manutenções de computadores e faço projetos de rede.</p>
   </section>
 
-  <section class="projetos">
+  <section id="projetos" class="projetos">
     <h2>Projetos</h2>
-    <ul>
-      <li><i class="fas fa-tools"></i> Manutenção avançada de Desktops e Notebooks.</li>
-      <li><i class="fas fa-network-wired"></i> Projeto de rede em escritórios ou casas.</li>
-      <li><i class="fas fa-mobile-alt"></i> Apps de consultas online</li>
-      <li><i class="fas fa-database"></i> Banco de dados (SQL)</li>
-    </ul>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-tools fa-2x"></i>
+        <h3>Manutenção de PCs</h3>
+        <p>Manutenção avançada de desktops e notebooks para uso pessoal e profissional.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-network-wired fa-2x"></i>
+        <h3>Projetos de rede</h3>
+        <p>Planejamento e instalação de redes para casas e pequenos escritórios.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt fa-2x"></i>
+        <h3>Apps online</h3>
+        <p>Aplicações simples para facilitar atendimentos e consultas via web.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database fa-2x"></i>
+        <h3>Bancos de dados</h3>
+        <p>Criação e gerenciamento de bancos SQL para projetos e sistemas.</p>
+      </div>
+    </div>
   </section>
-  
 
-  <section class="contato">
+  <section id="contato" class="contato">
     <h2>Contato</h2>
     <p>Preencha os campos para deixar seu nome e contato caso queira agendar uma manutenção.</p>
     <form id="contato" action="https://formspree.io/f/mdkebyba" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required />
       <input type="email" name="email" placeholder="Seu e-mail" required />
-      <input type="text" contato="contato" placeholder="Telefone de contato" required />
+      <input type="text" name="telefone" placeholder="Telefone de contato" required />
       <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
       <button type="submit">Enviar</button>
     </form>
-    
+
     <div id="mensagem-sucesso" style="display:none; color: green; margin-top: 10px;">
       Mensagem enviada com sucesso!
     </div>
-    
-    
   </section>
 
   <footer>
     <p>&copy; 2025 Iago Antão. Todos os direitos reservados.</p>
+    <div class="redes-sociais">
+      <a href="https://github.com/ias762" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/iago-antao" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:iago@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
   <script>
     const form = document.getElementById('contato');
     const sucesso = document.getElementById('mensagem-sucesso');
-  
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
@@ -65,7 +91,7 @@
           'Accept': 'application/json'
         }
       });
-  
+
       if (response.ok) {
         form.reset();
         sucesso.style.display = 'block';
@@ -74,7 +100,7 @@
       }
     });
   </script>
-  
-  
+</body>
+
 </body>
 </html>
