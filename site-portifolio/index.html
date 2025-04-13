@@ -35,25 +35,17 @@
   <section class="contato">
     <h2>Contato</h2>
     <p>Preencha os campos para deixar seu nome e contato caso queira agendar uma manutenção.</p>
-    <form id="form-contato">
-      <label for="nome">Nome</label>
-      <input id="nome" type="text" placeholder="Seu nome" required />
-      
-      <label for="email">E-mail</label>
-      <input id="email" type="email" placeholder="Seu e-mail" required />
-      
-      <label for="problema">Problema</label>
-      <textarea id="problema" placeholder="Descreva o problema" required></textarea>
-      
-      <label for="equipamento">Tipo de equipamento</label>
-      <select id="equipamento" required>
-        <option value="" disabled selected>Tipo de equipamento</option>
-        <option value="notebook">Notebook</option>
-        <option value="desktop">Desktop</option>
-      </select>
-      
+    <form id="contato" action="https://formspree.io/f/mdkebyba" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
       <button type="submit">Enviar</button>
     </form>
+    
+    <div id="mensagem-sucesso" style="display:none; color: green; margin-top: 10px;">
+      Mensagem enviada com sucesso!
+    </div>
+    
   </section>
 
   <footer>
@@ -61,5 +53,29 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('contato');
+    const sucesso = document.getElementById('mensagem-sucesso');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      if (response.ok) {
+        form.reset();
+        sucesso.style.display = 'block';
+      } else {
+        alert('Erro ao enviar. Tente novamente.');
+      }
+    });
+  </script>
+  
 </body>
 </html>
