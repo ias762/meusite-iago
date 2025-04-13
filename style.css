@@ -138,15 +138,14 @@ form {
   justify-content: center;
 }
 body {
-  background-color: #f4f6f8; /* Cinza clarinho que não incomoda a visão */
-  color: #333; /* Letra mais escura para contraste suave */
+  background-color: #f4f6f8; 
+  color: #333; 
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 body {
-  background-color: #eaeaea; /* Tom mais fechado */
-  color: #222;
+  background-color: #eaeaea; 
 }
 .contato {
   background-color: #ffffff;
