@@ -1,26 +1,24 @@
-document.getElementById("form-contato").addEventListener("submit", function(event) {
-    event.preventDefault();
-  
-    // Validação simples para garantir que todos os campos estão preenchidos
-    const nome = document.querySelector('#nome').value;
-    const email = document.querySelector('#email').value;
-    const problema = document.querySelector('#problema').value;
-    const equipamento = document.querySelector('#equipamento').value;
-  
-    if (!nome || !email || !problema || !equipamento) {
-      alert("Por favor, preencha todos os campos!");
-      return;
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form-contato");
+  const sucesso = document.getElementById("mensagem-sucesso");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.reset();
+      sucesso.style.display = "block";
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
     }
-  
-    // Desabilitar o botão enquanto o formulário está sendo processado
-    const button = this.querySelector("button");
-    button.disabled = true;
-  
-    // Simulando um envio de formulário (em breve sera adaptado para backend)
-    setTimeout(() => {
-      alert("Mensagem enviada com sucesso! Em breve entrarei em contato. 😊");
-      this.reset();  // Limpa os campos após o envio
-      button.disabled = false;  // Reabilita o botão
-    }, 1000);
   });
-  
+});

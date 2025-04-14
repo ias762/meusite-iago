@@ -4,103 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfólio - Iago</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-
   <header>
-    <h1>Olá, Seja bem-vindo(a)!</h1>
+    <h1>Olá, eu sou o Iago</h1>
+    <p>Desenvolvedor em aprendizado e entusiasta da tecnologia!</p>
   </header>
 
-  <section id="sobre" class="sobre">
+  <section class="sobre">
     <h2>Sobre mim</h2>
-    <p>Me chamo Iago Antão de Alencar, sou desenvolvedor em aprendizado e entusiasta da tecnologia. Bacharel em Serviço Social pela faculdade IRSA, Discente em Sistemas de Informação pela UFPI, trabalho com manutenções de computadores e faço projetos de rede.</p>
+    <p>Aprendiz em programação.</p>
+    <p>Bacharel em Serviço Social pela faculdade IRSA.</p>
+    <p>Discente em Sistemas de Informação pela UFPI.</p>
+    <p>Trabalho com Redes e Computadores.</p>
   </section>
 
-  <section id="projetos" class="projetos">
+  <section class="projetos">
     <h2>Projetos</h2>
-    <div class="cards">
-      <div class="card">
-        <i class="fas fa-tools fa-2x"></i>
-        <h3>Manutenção de PCs</h3>
-        <p>Manutenção avançada de desktops e notebooks para uso pessoal e profissional.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-network-wired fa-2x"></i>
-        <h3>Projetos de rede</h3>
-        <p>Planejamento e instalação de redes para casas e pequenos escritórios.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-mobile-alt fa-2x"></i>
-        <h3>Apps online</h3>
-        <p>Aplicações simples para facilitar atendimentos e consultas via web.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-database fa-2x"></i>
-        <h3>Bancos de dados</h3>
-        <p>Criação e gerenciamento de bancos SQL para projetos e sistemas.</p>
-      </div>
-    </div>
+    <ul>
+      <li>Manutenção avançada de Desktops e Notebooks</li>
+      <li>Projeto de rede em escritórios ou casas</li>
+      <li>Sites de vendas</li>
+      <li>Apps de consultas online</li>
+      <li>Banco de dados (SQL)</li>
+    </ul>
   </section>
 
-  <section id="contato" class="contato">
+  <section class="contato">
     <h2>Contato</h2>
     <p>Preencha os campos para deixar seu nome e contato caso queira agendar uma manutenção.</p>
-    <form id="contato" action="https://formspree.io/f/mdkebyba" method="POST">
+    <form id="form-contato" method="POST" action="https://formspree.io/f/mdkebyba">
       <input type="text" name="nome" placeholder="Seu nome" required />
       <input type="email" name="email" placeholder="Seu e-mail" required />
-      <input type="text" name="telefone" placeholder="Telefone de contato" required />
-      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+      <input type="tel" name="telefone" placeholder="Seu telefone" pattern="[0-9]{10,11}" required />
+      <textarea name="mensagem" placeholder="Descreva o problema" required></textarea>
+      <select name="equipamento" required>
+        <option value="" disabled selected>Tipo de equipamento</option>
+        <option value="notebook">Notebook</option>
+        <option value="desktop">Desktop</option>
+      </select>
       <button type="submit">Enviar</button>
     </form>
-
-    <div id="mensagem-sucesso" style="display:none; color: green; margin-top: 10px;">
-      Mensagem enviada com sucesso!
-    </div>
+    
+    <p id="mensagem-sucesso" style="display:none; color: #00ff88; margin-top: 10px;">
+      Mensagem enviada com sucesso! ✅
+    </p>
   </section>
 
   <footer>
     <p>&copy; 2025 Iago Antão. Todos os direitos reservados.</p>
-    <div class="redes-sociais">
-      <a href="https://github.com/ias762" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/iagoantao8" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:iagoantao8@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    const form = document.getElementById('contato');
-    const sucesso = document.getElementById('mensagem-sucesso');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        form.reset();
-        sucesso.style.display = 'block';
-      } else {
-        alert('Erro ao enviar. Tente novamente.');
-      }
-    });
-  </script>
-</body>
-
 </body>
 </html>
