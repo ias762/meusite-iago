@@ -1,113 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio - Iago Antão</title>
-  <meta name="description" content="Portfólio de Iago Antão - Desenvolvedor Web e Técnico em Informática.">
-  <meta name="keywords" content="portfólio, desenvolvedor web, HTML, CSS, JavaScript, suporte técnico, Pio IX">
-  <meta name="author" content="Iago Antão de Alencar Ribeiro Souza">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serviços em informática por Iago Antão - manutenção, redes, sites e sistemas.">
+  <title>Iago Antão | Suporte e Tecnologia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #0a192f;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+    .cta-btn {
+      background: #00b894;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      background: white;
+    }
+    .service {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .service i {
+      font-size: 2.5rem;
+      color: #00b894;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #0a192f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    footer .social-icons i {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: white;
+      transition: color 0.3s;
+    }
+    footer .social-icons i:hover {
+      color: #00b894;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-
-  <header class="bg-blue-700 text-white py-8 text-center shadow-md">
-    <h1 class="text-4xl font-bold">iago.dev</h1>
-    <p class="mt-2 text-lg">Desenvolvedor em formação • Técnico em informática</p>
+<body>
+  <header>
+    <h1>Iago Antão</h1>
+    <p>Soluções em informática para sua casa ou empresa</p>
+    <a href="https://wa.me/5589981279676?text=Ol%C3%A1%2C%20Iago!%20Gostaria%20de%20solicitar%20manuten%C3%A7%C3%A3o%20em%20meu%20computador.%20Voc%C3%AA%20pode%20me%20ajudar%3F" class="cta-btn">Fale comigo no WhatsApp</a>
   </header>
 
-  <main class="max-w-4xl mx-auto p-6">
-
-    <!-- SOBRE -->
-    <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Sobre mim</h2>
-      <ul class="list-disc ml-6 space-y-1">
-        <li>Aprendiz em programação (HTML, CSS, JavaScript e Python).</li>
-        <li>Bacharel em Serviço Social pela faculdade IRSA.</li>
-        <li>Discente em Sistemas de Informação pela UFPI.</li>
-        <li>Experiência com manutenção de computadores e notebooks.</li>
-        <li>Projetos de rede em residências e escritórios.</li>
-        <li>Toco guitarra nas horas vagas.</li>
-      </ul>
-    </section>
-
-  <!-- PROJETOS -->
-  <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-    <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Projetos</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-gray-50 p-4 rounded-lg shadow">
-        <h3 class="text-xl font-bold">Manutenção Avançada</h3>
-        <p>Reparo e upgrades em Desktops e Notebooks com diagnóstico detalhado.</p>
-      </div>
-      <div class="bg-gray-50 p-4 rounded-lg shadow">
-        <h3 class="text-xl font-bold">Projeto de Rede</h3>
-        <p>Criação de infraestrutura de redes domésticas e comerciais.</p>
-      </div>
-      <div class="bg-gray-50 p-4 rounded-lg shadow">
-        <h3 class="text-xl font-bold">Sites de Vendas</h3>
-        <p>Landing pages e lojas básicas com foco em usabilidade.</p>
-      </div>
-      <div class="bg-gray-50 p-4 rounded-lg shadow">
-        <h3 class="text-xl font-bold">Banco de Dados</h3>
-        <p>Modelagem e consultas SQL para aplicativos simples.</p>
-      </div>
+  <section class="services">
+    <div class="service">
+      <i class="fas fa-laptop"></i>
+      <h3>Manutenção de Computadores</h3>
+      <p>Formatos, upgrades, limpeza física e otimizações para melhor desempenho.</p>
+    </div>
+    <div class="service">
+      <i class="fas fa-network-wired"></i>
+      <h3>Projetos de Rede</h3>
+      <p>Montagem de redes domésticas ou empresariais com segurança e organização.</p>
+    </div>
+    <div class="service">
+      <i class="fas fa-globe"></i>
+      <h3>Desenvolvimento de Sites</h3>
+      <p>Criação de sites simples e funcionais para apresentação de negócios e vendas.</p>
+    </div>
+    <div class="service">
+      <i class="fas fa-database"></i>
+      <h3>Bancos de Dados</h3>
+      <p>Criação e manutenção de bancos de dados em SQL para sistemas e organização.</p>
     </div>
   </section>
 
-   <!-- CONTATO -->
-   <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-    <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Contato</h2>
-    <p class="mb-4">Preencha os campos abaixo para agendar uma manutenção ou entrar em contato.</p>
-    <form id="form-contato" method="POST" action="https://formspree.io/f/mdkebyba" class="space-y-4">
-      <input class="w-full p-2 border rounded" type="text" name="nome" placeholder="Seu nome" required />
-      <input class="w-full p-2 border rounded" type="email" name="email" placeholder="Seu e-mail" required />
-      <input class="w-full p-2 border rounded" type="tel" name="telefone" placeholder="Seu telefone" pattern="[0-9]{10,11}" required />
-      <textarea class="w-full p-2 border rounded" name="mensagem" placeholder="Descreva o problema" required></textarea>
-      <select class="w-full p-2 border rounded" name="equipamento" required>
-        <option value="" disabled selected>Tipo de equipamento</option>
-        <option value="notebook">Notebook</option>
-        <option value="desktop">Desktop</option>
-      </select>
-      <button class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800" type="submit">Enviar</button>
-    </form>
-    <p id="mensagem-sucesso" style="display:none; color: #00ff88; margin-top: 10px;">
-      Mensagem enviada com sucesso! ✅
-    </p>
-  </section>
+  <a class="whatsapp-btn" href="https://wa.me/5589981279676?text=Ol%C3%A1%2C%20Iago!%20Gostaria%20de%20solicitar%20manuten%C3%A7%C3%A3o%20em%20meu%20computador.%20Voc%C3%AA%20pode%20me%20ajudar%3F" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  <!-- REDES -->
-  <section class="text-center mb-8">
-    <h2 class="text-2xl font-semibold mb-2">Redes Sociais</h2>
-    <p class="mb-2">Conecte-se comigo:</p>
-    <a href="https://github.com/ias762" target="_blank" class="text-blue-600 hover:underline">GitHub</a> |
-    <a href="https://www.linkedin.com/in/iagoantao8" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a> |
-    <a href="https://www.instagram.com/iagoantao_?igsh=OXVkemxvdjJqaWdr" target="_blank" class="text-blue-600 hover:underline">Instagram</a>
-  </section>
-</main>
-
-<footer class="bg-blue-700 text-white text-center py-4">
-  <p>&copy; 2025 Iago Antão. Todos os direitos reservados.</p>
-</footer>
-
-<script src="script.js"></script>
-<a 
-  href="https://wa.me/5589981279676?text=Olá%20Iago,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20seus%20serviços." 
-  target="_blank" 
-  aria-label="Fale comigo no WhatsApp"
-  class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg z-50 transition"
->
-  <!-- Ícone do WhatsApp -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-white" viewBox="0 0 448 512">
-    <path d="M380.9 97.1C339 55.2 282.7 32 224 32 100.3 32 0 132.3 0 256c0 45 11.8 89 34.3 127.6L0 480l99.6-33.1C138.5 468.2 180.6 480 224 480c123.7 0 224-100.3 224-224 0-58.7-23.2-115-67.1-158.9zM224 438c-37.5 0-74.3-10.4-106.1-30l-7.6-4.6-59 19.6 19.6-59-4.6-7.6C72.4 325.3 62 288.5 62 251c0-89.6 72.4-162 162-162 43.2 0 83.8 16.8 114.3 47.2S385 207.8 385 251c0 89.6-72.4 162-161 162z"/>
-  </svg>
-</a>
-
+  <footer>
+    <p>© 2025 Iago Antão - Pio IX, PI | <i class="fas fa-envelope"></i> iagoantao8@gmail.com</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/iagoantao8" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ias762" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/89981279676" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
-
-  
-
-  
-
-  
